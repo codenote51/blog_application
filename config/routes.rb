@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  #get 'simple/text'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
    root "articles#index"
     resources :articles do
-       resources :comments
+       resources :comments 
+      end 
     end
-end
