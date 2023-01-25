@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'project/simple'
   get 'users/text'
   get 'persons/simple'
   #get 'simple/text'
