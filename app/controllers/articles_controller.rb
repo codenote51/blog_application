@@ -44,7 +44,8 @@ class ArticlesController < ApplicationController
     @article.destroy
 
     redirect_to root_path, status: :see_other
-  end 
+  end
+
   private
     def article_params
       params.require(:article).permit(:title, :body, :status)
