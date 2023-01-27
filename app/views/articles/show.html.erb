@@ -3,7 +3,7 @@
 
 <p><%= @article.body.to_yaml %></p>
 
-<ul>
+<ol>
   <li>
     <%= link_to "Edit", edit_article_path(@article) %>
   </li>
@@ -15,7 +15,7 @@
       } 
     %>   
   </li>
-</ul>
+</ol>
 
 <h2>Comments</h2>
 <%= render @article.comments %>
