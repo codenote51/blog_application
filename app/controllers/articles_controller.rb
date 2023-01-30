@@ -5,11 +5,11 @@ class ArticlesController < ApplicationController
     @articles = Article.all
   end
 
-   def show
+  def show
     @article = Article.find(params[:id])
   end
   
-   def new
+  def new
     @article = Article.new
   end
 
@@ -23,7 +23,10 @@ class ArticlesController < ApplicationController
   end
   
   def edit
-    @article = Article.find(params[:id])
+    @article = Article.find_by(id: params[:id])
+    unless @article
+      redirect_to root_path #, status: :not_found
+    end
   end
 
   def update
@@ -39,9 +42,9 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
-
     redirect_to root_path, status: :see_other
   end 
+
   private
     def article_params
       params.require(:article).permit(:title, :body)
