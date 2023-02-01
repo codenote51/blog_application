@@ -10,20 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_30_121058) do
-  create_table "Simples", force: :cascade do |t|
-    t.string "name"
-    t.text "Email"
-    t.string "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
+ActiveRecord::Schema[7.0].define(version: 2023_02_01_101119) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.integer "order_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_books_on_order_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -35,15 +36,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_30_121058) do
     t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
-  create_table "customers_products", id: false, force: :cascade do |t|
-    t.integer "customer_id", null: false
-    t.integer "product_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["customer_id", "product_id"], name: "index_customers_products_on_customer_id_and_product_id"
-    t.index ["product_id", "customer_id"], name: "index_customers_products_on_product_id_and_customer_id"
-  end
-
   create_table "orders", force: :cascade do |t|
     t.string "name"
     t.text "lastname"
@@ -52,19 +44,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_30_121058) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "products", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.index ["email"], name: "unique_emails", unique: true
-    t.index ["name"], name: "index_users_on_name"
-  end
-
+  add_foreign_key "books", "orders"
   add_foreign_key "comments", "articles"
 end
