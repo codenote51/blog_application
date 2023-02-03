@@ -10,21 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_01_101119) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_03_081318) do
+
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "books", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.integer "order_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["order_id"], name: "index_books_on_order_id"
+    t.string "status"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -33,7 +26,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_01_101119) do
     t.integer "article_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
     t.index ["article_id"], name: "index_comments_on_article_id"
+  end
+
+  create_table "customers", force: :cascade do |t|
+    t.string "name"
+    t.text "lastname"
+    t.integer "order_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "amount"
+    t.string "status"
+    t.index ["order_id"], name: "index_customers_on_order_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -42,8 +47,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_01_101119) do
     t.text "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "amount"
+    t.string "status"
   end
-
-  add_foreign_key "books", "orders"
   add_foreign_key "comments", "articles"
+  add_foreign_key "customers", "orders"
 end
