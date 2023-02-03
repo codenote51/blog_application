@@ -1,10 +1,12 @@
 class Order < ApplicationRecord
-  validates :name,  presence: true, length: { minimum: 3 }
-  validates :lastname, presence: true 
-  validates :email, presence: true
+  #include Visible
+  has_many :customers
+    validates :name, presence: true
+    validates :lastname,  presence: true
+    validates :email,  confirmation: true
+  end
 
    #after_touch :log_when_book_or_order_touched
-end
 
   #before_save :name,  if: Proc.new { name? }
   #if: Proc.new { |order| orde.name? }
