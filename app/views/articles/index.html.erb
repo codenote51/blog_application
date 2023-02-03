@@ -1,9 +1,10 @@
 <h1>Index Article</h1>
 
+Our blog has <%= Article.public_count %> articles and counting!
 
 <ol>
   <% @articles.each do |article| %>
-    <% #unless article.archived? %>
+      <% unless article.archived? %>
       <li>
         <b>Title:</b>
         <%= link_to article.title, article %>
@@ -14,7 +15,7 @@
         <%= link_to article.body, article  %>
       </li>
     <% end %>
-  <% #end %>
+  <% end %>
 </ol>
 
 <%= link_to "New Article", new_article_path %>
