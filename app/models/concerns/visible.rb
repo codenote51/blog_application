@@ -1,5 +1,5 @@
+
 module Visible
-  
   extend ActiveSupport::Concern
 
   VALID_STATUSES = ['public', 'private', 'archived']
@@ -15,7 +15,6 @@ module Visible
   end
 
   def archived?
-    status == 'archived?'
+    status == 'archived'
   end
-
 end
