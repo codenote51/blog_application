@@ -8,5 +8,7 @@ Rails.application.routes.draw do
     resources :comments 
   end
 
-  resources :orders
+  resources :orders do
+    resources :customers
+   end
 end
