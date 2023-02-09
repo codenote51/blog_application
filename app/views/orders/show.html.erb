@@ -6,9 +6,10 @@
 <ol>
   <li>
     <%= link_to "Edit", edit_order_path(@order) %>
-  </li>
+  </li> 
+
   <li>
-    <%= link_to "Destroy", order_path(@order), data: 
+    <%= link_to "Destroy", bank_path(@bank), data: 
       {
         turbo_method: :delete,
         turbo_confirm: "Are you sure?"
@@ -18,8 +19,3 @@
 </ol>
 
 
-<h2>Customers</h2>
-<%= render @order.customers %>
-
-<h2>Add a customers:</h2>
-<%= render 'customers/form' %>
