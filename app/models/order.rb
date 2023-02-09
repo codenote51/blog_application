@@ -1,9 +1,13 @@
 class Order < ApplicationRecord
-  #include Visible
-  has_many :customers
+  #self.locking_column = :lock_orders_column
     validates :name, presence: true
     validates :lastname,  presence: true
     validates :email,  confirmation: true
+
+  #default_scope { where(name: 'nancy') }
+  #default_scope { where("name = ?", false) }
+  #scope :email, -> { where(lastname: true) }
+
   end
 
    #after_touch :log_when_book_or_order_touched
