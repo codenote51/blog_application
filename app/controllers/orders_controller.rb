@@ -1,9 +1,12 @@
 class OrdersController < ApplicationController
+  #layout "bank"
 
   def index
     @orders = Order.all
+    #render :layout => 'bank'
   end
 
+  
   def show
     @order = Order.find(params[:id])
   end
@@ -13,7 +16,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.find(order_params)
+    @order = Order.find(params[:id])
     if @order.save
       redirect_to @order
     else
