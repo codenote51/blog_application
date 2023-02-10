@@ -1,0 +1,37 @@
+ef show
+    @bank = Bank.find(params[:id])
+     if @bank
+      render action: "special_show" and return
+    end
+      render action: "regular_show"
+  end
+
+
+
+  def create
+    @bank = Bank.new(bank_params)
+    respond_to do |format|
+        if @bank.save
+          format.html {redirect_to @bank}
+        else
+          format.html { render :new, status: :unprocessable_entity }
+        end
+      end
+  end
+
+
+  def show
+    #@bank = Bank.find(params[:id])
+    @bank = Bank.find_by(id: params[:id])
+    if @bank.nil?
+      render action: "index"
+       #redirect_to orders_url, status: 301if @book.nil?
+    end
+  end
+
+   def edit
+    @bank = Bank.find(params[:id])
+    #redirect_to orders_url
+    #redirect_back(fallback_location: bank_path)
+
+  end
