@@ -1,0 +1,36 @@
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>lastname</th>
+      <th>Email</th>
+      <th>City</th>
+      <th>pin</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @banks.each do |bank| %>
+    <tr>
+     <td><%= link_to bank.name, bank %></td>
+     <td><%= link_to bank.lastname, bank %></td>
+     <td><%= link_to bank.email, bank %></td>
+     <td><%= link_to bank.city, bank %></td>
+     <td><%= link_to bank.pin, bank %></td>
+     <td><%= link_to bank.age, bank %></td>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<br>
+
+
+
+
+<div>
+  <%= link_to "New", new_bank_path %>
+</div>
+
+<%= render @bank || "empty_list" %>
+
+

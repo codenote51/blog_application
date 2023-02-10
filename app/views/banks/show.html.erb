@@ -1,0 +1,20 @@
+<h1><%= @bank.name %></h1>
+<p><%= @bank.lastname %></p>
+<p><%= @bank.email %></p>
+<p><%= @bank.city %></p>
+<p><%= @bank.pin %></p>
+<p style="font-size: 25px"><%= @bank.age %></p>
+
+<ol>
+  <li>
+    <%= link_to "Edit", edit_bank_path(@bank) %>
+  </li>
+   <li>
+    <%= link_to "Destroy", bank_path(@bank), data: 
+      {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+      } 
+    %>   
+  </li>
+</ol>
