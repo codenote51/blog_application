@@ -1,0 +1,32 @@
+table {
+  background-color: yellow;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid black;
+  text-align: center;
+  padding: 8px;
+}
+
+ol{
+  background-color: orange;
+  width: 100px;
+}
+
+.mains{
+  color: red;
+}
+
+body{
+  background-color: pink;
+}
+.submit-btn{
+  height: 20px;
+}
+
+.rails-pages{
+  height: 200px;
+}
