@@ -17,6 +17,7 @@ class BanksController < ApplicationController
     respond_to do |format|
       if @bank.save 
         format.html {redirect_to @bank}
+        render inline: "<% @banks.each do |bank| %><p><%= bank.name %></p><% end %>" and return
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -42,6 +43,10 @@ class BanksController < ApplicationController
     redirect_to root_path, status: :see_other
   end
 
+  def tests
+     @tests = Test.all
+    #render file: "#{Rails.root}/public/404.html", layout: false
+  end
 
   private
   def bank_params
