@@ -8,13 +8,13 @@
     <%= javascript_include_tag "columns" %>
     <%= stylesheet_link_tag "main", "data-turbo-track": "reload" %>
   </head>
-
   <body>
-    <h1 style="background-color:red;">Banks</h1>
+    <h1 style="background-color:pink;">Banks</h1>
     <%= image_tag('download.jpeg', class: 'submit-btn') %><br>
-  <%= yield %>
+    <%= yield %>
     <%= image_tag('rails.png', class: 'rails-pages') %><br>
-    <%= link_to('https://www.w3schools.com/') %>
+    <%= link_to "w3school",  'https://www.w3schools.com/' %><br><br>
+     <%= image_tag "diploma.jpg", {height: 100}  %><br>
   </body>
 </html>
 
