@@ -3,6 +3,8 @@ class Order < ApplicationRecord
     validates :name, presence: true
     validates :lastname,  presence: true
     validates :email,  confirmation: true
+    validates :order, dependent: :destroy 
+
 
   #default_scope { where(name: 'nancy') }
   #default_scope { where("name = ?", false) }
