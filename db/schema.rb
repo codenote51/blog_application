@@ -10,14 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_03_081318) do
-
+ActiveRecord::Schema[7.0].define(version: 2023_02_08_102652) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status"
+  end
+
+  create_table "banks", force: :cascade do |t|
+    t.string "name"
+    t.string "lastname"
+    t.string "email"
+    t.text "city"
+    t.string "pin"
+    t.string "age"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "comments", force: :cascade do |t|
@@ -50,6 +60,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_03_081318) do
     t.string "amount"
     t.string "status"
   end
+
   add_foreign_key "comments", "articles"
   add_foreign_key "customers", "orders"
+  add_foreign_key "employees", "employees", column: "article_id"
+  add_foreign_key "transactions", "banks"
 end
