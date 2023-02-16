@@ -27,3 +27,7 @@ ol{
 .rails-pages{
   height: 200px;
 }
+
+body{
+  background-color: pink;
+}
