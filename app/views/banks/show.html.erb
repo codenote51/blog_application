@@ -9,12 +9,6 @@
   <li>
     <%= link_to "Edit", edit_bank_path(@bank) %>
   </li>
-   <li>
-    <%= link_to "Destroy", bank_path(@bank), data: 
-      {
-        turbo_method: :delete,
-        turbo_confirm: "Are you sure?"
-      } 
-    %>   
-  </li>
 </ol>
+
+ <%= button_to "Destroy this bank", @bank, method: :delete %>
