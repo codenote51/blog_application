@@ -1,2 +1,4 @@
-alert("50");
-console.log("Nancy Kushwah");
+a = 3;
+b = 4;
+c = a + b;
+console.log(c)
