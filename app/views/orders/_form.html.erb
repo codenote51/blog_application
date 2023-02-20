@@ -1,0 +1,70 @@
+<%= form_with model: @order do |form| %>
+
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :lastname %><br>
+    <%= form.text_field :lastname %><br>
+  </div>
+
+  <div>
+    <%= form.label :email %><br>
+    <%= form.text_field :email%><br>
+  </div>
+
+  <div>
+    <%= form.check_box :pet_dog %>
+    <%= form.label :pet_dog, "I own a dog" %>
+    <%= form.check_box :pet_cat %>
+    <%= form.label :pet_cat, "I own a cat" %>
+  </div>
+
+  <div>
+    <%= form.radio_button :age, "child" %>
+    <%= form.label :age_child, "I am younger than 21" %>
+    <%= form.radio_button :age, "adult" %>
+    <%= form.label :age_adult, "I am over 21" %>
+  </div>
+
+  <div>
+    <%= form.text_area :message, size: "70x5" %><br>
+    <%= form.hidden_field :parent_id, value: "foo" %><br>
+    <%= form.password_field :password %><br>
+    <%= form.number_field :price, in: 1.0..20.0, step: 0.5 %><br>
+    <%= form.range_field :discount, in: 1..100 %><br>
+    <%= form.date_field :born_on %><br>
+    <%= form.time_field :started_at %><br>
+    <%= form.datetime_local_field :graduation_day %><br>
+    <%= form.month_field :birthday_month %><br>
+    <%= form.week_field :birthday_week %><br>
+    <%= form.search_field :name %><br>
+    <%= form.email_field :address %><br>
+    <%= form.telephone_field :phone %><br>
+    <%= form.url_field :homepage %><br>
+    <%= form.color_field :favorite_color %><br><br>
+    <%= select_year 1999, prefix: "party" %><br><br>
+  </div>
+
+  <div>
+    <%= form.select :city, ["Berlin", "Chicago", "Madrid"] %><br><br>
+    <%= form.select :city,
+      {
+        "Europe" => [ ["Berlin", "BE"], ["Madrid", "MD"] ],
+        "North America" => [ ["Chicago", "CHI"] ],
+      },
+      selected: "CHI" 
+    %>
+  </div>
+
+  <div>
+    <%= form.label :status %><br>
+    <%= form.select :status, ['public', 'private', 'archived'], selected: 'private' %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
