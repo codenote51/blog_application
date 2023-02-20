@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-   layout "banks", only: [:index, :new]
+   #layout "banks", only: [:index, :new]
   def index
     @orders = Order.all
   end
@@ -42,15 +42,10 @@ class OrdersController < ApplicationController
   end 
 
   def tests
-    @order = Order.find_by(id: params[:id])
-      if @order.nil?
-      redirect_to action: :index
-    end
   end
 
   private
   def order_params
     params.require(:order).permit(:name, :lastname, :status)
   end
-
 end
