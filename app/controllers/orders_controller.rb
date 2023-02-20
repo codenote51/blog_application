@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+   layout "banks", only: [:index, :new]
   def index
     @orders = Order.all
   end
@@ -41,11 +42,16 @@ class OrdersController < ApplicationController
   end 
 
   def tests
-    render file: "{Rails.root}/public/404.html", layout: false
+    #redirect_to banks_path, status: 301
+      @order = Order.find_by(id: params[:id])
+  if @Order.nil?
+    render action: "index"
+  end
   end
 
   private
   def order_params
     params.require(:order).permit(:name, :lastname, :status)
   end
+
 end
