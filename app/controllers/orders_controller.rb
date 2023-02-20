@@ -42,6 +42,8 @@ class OrdersController < ApplicationController
   end 
 
   def tests
+    #head :bad_request
+    head :created, location: orders_path(@order)
   end
 
   private
