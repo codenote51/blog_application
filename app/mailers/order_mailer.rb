@@ -3,7 +3,7 @@ class OrderMailer < ApplicationMailer
   def new_order_email
     attachments.inline['NK.jpg'] = File.read('/home/nancy/nancy/images/Nk.jpg')
     @order = params[:order]
-    @url  = 'http://example.com/login'
+    @url  = 
     mail(to: @order.email, subject: 'Welcome to My Awesome Site')
   end
 end
