@@ -71,6 +71,7 @@ Rails.application.configure do
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
+  config.assets.digest = true
 
   # Don't log any deprecations.
   config.active_support.report_deprecations = false
@@ -96,13 +97,4 @@ Rails.application.configure do
   host = 'example.com' #replace with your own url
   config.action_mailer.default_url_options = { host: host }
 
-# SMTP settings for gmail
-config.action_mailer.smtp_settings = {
-  :address              => "nancykushwahror@gmail.com",
-  :port                 => 587,
-  :user_name            => <gmail_username>,
-  :password             => <gmail_password>,
-  :authentication       => "plain",
-  :enable_starttls_auto => true
-}
 end
