@@ -1,5 +1,4 @@
 class BanksController < ApplicationController
-  layout "banks"
   def index 
     @banks = Bank.all
   end
