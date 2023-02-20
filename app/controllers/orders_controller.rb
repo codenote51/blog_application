@@ -42,6 +42,10 @@ class OrdersController < ApplicationController
   end 
 
   def tests
+    @order = Order.find_by(id: params[:id])
+      if @order.nil?
+      redirect_to action: :index
+    end
   end
 
   private
