@@ -11,8 +11,8 @@ module BlogApplication
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
-    config.action_mailer.default_url_options = { host: 'example.com' }
-    config.asset_host = 'http://example.com'
+    #config.action_mailer.default_url_options = { host: 'example.com' }
+    #config.asset_host = 'http://example.com'
 
 
 
