@@ -1,0 +1,8 @@
+<%= form_with model: @transaction do |transaction_form| %>
+  <%= transaction_form.text_field :name %>
+  <% @transaction.to.each do |to| %>
+    <%= trasaction_form.fields_for to, index: to.id do |to_form| %>
+      <%= to_form.text_field :from %>
+    <% end %>
+  <% end %>
+<% end %>
