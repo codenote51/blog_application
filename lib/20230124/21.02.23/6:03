@@ -1,0 +1,117 @@
+nancy@Nancy:~/nancy/ror/blog_application$ git push origin main
+Password for 'https://codenote51@github.com': 
+To https://github.com/codenote51/blog_application.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://codenote51@github.com/codenote51/blog_application.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+nancy@Nancy:~/nancy/ror/blog_application$ git pull origin main
+From https://github.com/codenote51/blog_application
+ * branch            main       -> FETCH_HEAD
+Auto-merging app/views/layouts/banks.html.erb
+CONFLICT (content): Merge conflict in app/views/layouts/banks.html.erb
+Auto-merging app/views/articles/index.html.erb
+Auto-merging app/assets/stylesheets/main.css
+CONFLICT (content): Merge conflict in app/assets/stylesheets/main.css
+Automatic merge failed; fix conflicts and then commit the result.
+nancy@Nancy:~/nancy/ror/blog_application$ git status
+On branch main
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+  new file:   .ruby-gemset
+  modified:   app/views/articles/_form.html.erb
+  modified:   app/views/articles/index.html.erb
+  modified:   app/views/articles/show.html.erb
+  modified:   app/views/comments/_comment.html.erb
+  modified:   app/views/comments/_form.html.erb
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+  both modified:   app/assets/stylesheets/main.css
+  both modified:   app/views/layouts/banks.html.erb
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+  modified:   app/models/order.rb
+  modified:   config/initializers/assets.rb
+  modified:   db/schema.rb
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+  app/assets/images/YouTube - YouTube.html
+  app/jobs/guests_cleanup_job.rb
+  app/jobs/order_job.rb
+  app/jobs/send_emails_to_orders_job.rb
+  db/migrate/20230221060710_article.rb
+  db/migrate/20230221105741_change_orders_name.rb
+  db:migrate
+  lib/20230124/21.02.23/
+
+nancy@Nancy:~/nancy/ror/blog_application$ git  add ^C
+nancy@Nancy:~/nancy/ror/blog_application$ git status app/assets/stylesheets/main.css app/views/layouts/banks.html.erb 
+On branch main
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+  both modified:   app/assets/stylesheets/main.css
+  both modified:   app/views/layouts/banks.html.erb
+
+no changes added to commit (use "git add" and/or "git commit -a")
+nancy@Nancy:~/nancy/ror/blog_application$ git add app/assets/stylesheets/main.css app/views/layouts/banks.html.erb 
+nancy@Nancy:~/nancy/ror/blog_application$ git status
+On branch main
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+  new file:   .ruby-gemset
+  modified:   app/views/articles/_form.html.erb
+  modified:   app/views/articles/index.html.erb
+  modified:   app/views/articles/show.html.erb
+  modified:   app/views/comments/_comment.html.erb
+  modified:   app/views/comments/_form.html.erb
+  modified:   app/views/layouts/banks.html.erb
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+  modified:   app/models/order.rb
+  modified:   config/initializers/assets.rb
+  modified:   db/schema.rb
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+  app/assets/images/YouTube - YouTube.html
+  app/jobs/guests_cleanup_job.rb
+  app/jobs/order_job.rb
+  app/jobs/send_emails_to_orders_job.rb
+  db/migrate/20230221060710_article.rb
+  db/migrate/20230221105741_change_orders_name.rb
+  db:migrate
+  lib/20230124/21.02.23/
+
+nancy@Nancy:~/nancy/ror/blog_application$ git commit 
+[main 25f3069] Merge branch 'main' of https://github.com/codenote51/blog_application into main
+nancy@Nancy:~/nancy/ror/blog_application$ gitk
+^C
+nancy@Nancy:~/nancy/ror/blog_application$ git push origin main
+Password for 'https://codenote51@github.com': 
+Enumerating objects: 416, done.
+Counting objects: 100% (389/389), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (331/331), done.
+Writing objects: 100% (340/340), 34.16 KiB | 1.14 MiB/s, done.
+Total 340 (delta 222), reused 0 (delta 0)
+remote: Resolving deltas: 100% (222/222), completed with 24 local objects.
+To https://github.com/codenote51/blog_application.git
+   83e71b9..25f3069  main -> main
+nancy@Nancy:~/nancy/ror/blog_application$ 
