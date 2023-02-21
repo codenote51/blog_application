@@ -10,13 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_08_102652) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_21_105741) do
+  create_table "", force: :cascade do |t|
+    t.integer "name"
+    t.text "lastname"
+    t.text "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "status"
   end
 
   create_table "banks", force: :cascade do |t|
@@ -30,39 +37,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_08_102652) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "comments", force: :cascade do |t|
-    t.string "commenter"
-    t.text "body"
-    t.integer "article_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "status"
-    t.index ["article_id"], name: "index_comments_on_article_id"
-  end
-
-  create_table "customers", force: :cascade do |t|
-    t.string "name"
-    t.text "lastname"
-    t.integer "order_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "amount"
-    t.string "status"
-    t.index ["order_id"], name: "index_customers_on_order_id"
-  end
-
-  create_table "orders", force: :cascade do |t|
-    t.string "name"
-    t.text "lastname"
-    t.text "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "amount"
-    t.string "status"
-  end
-
-  add_foreign_key "comments", "articles"
-  add_foreign_key "customers", "orders"
-  add_foreign_key "employees", "employees", column: "article_id"
-  add_foreign_key "transactions", "banks"
 end
