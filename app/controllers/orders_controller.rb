@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-   #layout "banks", only: [:index, :new]
+  # layout "banks", only: [:index, :new]
   def index
     @orders = Order.all
   end
