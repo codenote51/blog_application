@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
+
   def index
+    # binding.pry
     @articles = Article.all
   end
 
@@ -44,6 +46,7 @@ class ArticlesController < ApplicationController
   end
 
   def tables2
+    # binding.pry
     @n = params[:n].to_i
   end
 
