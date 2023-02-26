@@ -1,19 +1,16 @@
 <h1>Index Order</h1>
 
-
 <% @orders.each do |order| %>
- <ol>
-   <li>
-    <%= link_to order.name, order %>
-  </li>
-  <li>
-    <%= link_to order.lastname, order %>
-  </li>
-  <li>
-    <%= link_to order.email, order %>
-  </li>
- </ol>
+  <ol>
+    <li>
+      <%= link_to order.name, order %>
+    </li>
+    <li>
+      <%= link_to order.lastname, order %>
+    </li>
+    <li>
+      <%= link_to order.email, order %>
+    </li>
+  </ol>
 <% end %>
 <%= link_to "New", new_order_path %>
-
-

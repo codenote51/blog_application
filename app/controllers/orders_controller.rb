@@ -1,5 +1,4 @@
 class OrdersController < ApplicationController
-  # layout "banks", only: [:index, :new]
   def index
     @orders = Order.all
   end
@@ -42,8 +41,6 @@ class OrdersController < ApplicationController
   end 
 
   def tests
-    #head :bad_request
-    head :created, location: orders_path(@order)
   end
 
   private
