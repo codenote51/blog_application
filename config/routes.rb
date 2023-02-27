@@ -3,17 +3,15 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   get "/tests", to: "orders#tests"
   get "/tables-for-n-upto-m/:n/:m", to: "articles#tables"
-  get "/tables-n-upto-m", to: "articles#tables2"
-  #match 'banks', to: 'banks#new', via: :all  
+  get "/tables-n-upto-m", to: "articles#tables2" 
+
   root "artices#index"
 
-    resources :articles do
-      resources :comments 
-    end
-    resources :orders   do
-      resources :customers
-    end
-    scope shallow_prefix: "sekret" do
-      resources :banks
-    end
+  resources :articles do
+    resources :comments 
+  end
+  resources :orders   do
+    resources :customers
+  end
+  resources :banks 
 end
