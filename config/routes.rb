@@ -4,10 +4,8 @@ Rails.application.routes.draw do
   get "/tests", to: "orders#tests"
   get "/tables-for-n-upto-m/:n/:m", to: "articles#tables"
   get "/tables-n-upto-m", to: "articles#tables2"
-  #get 'banks', action: :new, controller: 'banks'
-
-
-  root "articles#index"
+  
+  root "artices#index"
 
     resources :articles do
       resources :comments 
