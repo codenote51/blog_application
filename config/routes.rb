@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get "/tests", to: "orders#tests"
   get "/tables-for-n-upto-m/:n/:m", to: "articles#tables"
   get "/tables-n-upto-m", to: "articles#tables2"
-  
+  #match 'banks', to: 'banks#new', via: :all  
   root "artices#index"
 
     resources :articles do
