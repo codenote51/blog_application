@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-    OrderMailer.with(order: @order).welcome_email.deliver_later
+    #OrderMailer.with(order: @order).welcome_email.deliver_later
     if @order.save
       redirect_to @order
     else
