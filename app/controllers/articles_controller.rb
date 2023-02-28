@@ -50,6 +50,9 @@ class ArticlesController < ApplicationController
     @n = params[:n].to_i
   end
 
+  def db_design
+  end
+
   private
   def article_params
     params.require(:article).permit(:title, :body, :status)
