@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   get "/tests", to: "orders#tests"
   get "/tables-for-n-upto-m/:n/:m", to: "articles#tables"
-  get "/tables-n-upto-m", to: "articles#tables2" 
+  get "/db_design", to: "articles#db_design"
+  get "/tables2-n-upto-m", to: "articles#tables2" 
 
   root "artices#index"
 
