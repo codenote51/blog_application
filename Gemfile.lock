@@ -108,6 +108,7 @@ GEM
     matrix (0.4.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
+    mini_portile2 (2.8.1)
     minitest (5.17.0)
     msgpack (1.6.0)
     net-imap (0.3.4)
@@ -120,7 +121,8 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.8)
-    nokogiri (1.14.2-x86_64-linux)
+    nokogiri (1.14.2)
+      mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     pry (0.14.2)
       coderay (~> 1.1)
@@ -173,7 +175,8 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.6.1-x86_64-linux)
+    sqlite3 (1.6.1)
+      mini_portile2 (~> 2.8.0)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
     thor (1.2.1)
@@ -200,10 +203,10 @@ GEM
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.6.7)
+    zip (2.0.2)
 
 PLATFORMS
   ruby
-  x86_64-linux
 
 DEPENDENCIES
   bootsnap
@@ -213,6 +216,7 @@ DEPENDENCIES
   pry
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.1)
+  rubyzip (~> 2.3, >= 2.3.2)
   selenium-webdriver
   sprockets-rails
   sqlite3 (~> 1.4)
@@ -221,9 +225,10 @@ DEPENDENCIES
   tzinfo-data
   web-console
   webdrivers
+  zip
 
 RUBY VERSION
    ruby 2.7.0p0
 
 BUNDLED WITH
-   2.4.7
+   2.1.2
