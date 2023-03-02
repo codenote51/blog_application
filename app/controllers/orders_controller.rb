@@ -13,8 +13,8 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-    #OrderMailer.with(order: @order).welcome_email.deliver_later
     if @order.save
+       OrderMailer.with(order: @order).new_order_email.deliver_later
       redirect_to @order
     else
       render :new, status: :unprocessable_entity
