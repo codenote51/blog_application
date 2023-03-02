@@ -16,6 +16,7 @@ class BanksController < ApplicationController
     @bank = Bank.new(bank_params)
     respond_to do |format|
       if @bank.save 
+        BankMailer.with(bank: @bank).welcome_email.deliver_later
         format.html {redirect_to @bank}
       else
         format.html { render :new, status: :unprocessable_entity }
