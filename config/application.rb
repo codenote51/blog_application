@@ -22,5 +22,10 @@ module BlogApplication
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.action_mailer.preview_path = "#{Rails.root}/test/mailer_previews"
+    config.action_mailer.default_url_options = { host: 'example.com' }
+    config.asset_host = 'http://example.com'
+
+
   end
 end
