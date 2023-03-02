@@ -1,7 +1,5 @@
 class ArticlesController < ApplicationController
-
   def index
-    # binding.pry
     @articles = Article.all
   end
 
@@ -15,6 +13,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+
     if @article.save
       redirect_to @article
     else
@@ -23,11 +22,12 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    article = Article.find(params[:id])
+    @article = Article.find(params[:id])
   end
 
   def update
     @article = Article.find(params[:id])
+
     if @article.update(article_params)
       redirect_to @article
     else
@@ -38,23 +38,13 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
+
     redirect_to root_path, status: :see_other
   end
 
-  def tables
-    @n = params[:n].to_i
-  end
-
-  def tables2
-    # binding.pry
-    @n = params[:n].to_i
-  end
-
-  def db_design
-  end
-
   private
-  def article_params
-    params.require(:article).permit(:title, :body, :status)
-  end
+    def article_params
+      params.require(:article).permit(:title, :body)
+    end
 end
+
