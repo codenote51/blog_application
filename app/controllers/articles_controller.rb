@@ -42,6 +42,14 @@ class ArticlesController < ApplicationController
     redirect_to root_path, status: :see_other
   end
 
+  def tables
+    @n = params[:n].to_i
+  end
+
+  def tables2
+    @n = params[:n].to_i
+  end
+
   private
     def article_params
       params.require(:article).permit(:title, :body)
