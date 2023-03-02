@@ -26,13 +26,13 @@ class OrdersController < ApplicationController
   end
 
   def update
-    @order = Order.find([:id])
+    @order = Order.find(params[:id])
     if update.order(order_params)
       redirect_to @order
     else
       render :edit, status: :unprocessable_entity
     end
-  end
+  end 
 
   def destroy
     @order = Order.find(params[:id])
