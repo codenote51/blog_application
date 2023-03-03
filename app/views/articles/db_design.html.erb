@@ -1,5 +1,6 @@
 <table>
   <thead> 
+  <thead>
     <tr>
       <th>tabledata</th>
       <th>tabledata</th>
@@ -11,6 +12,7 @@
       <th>tabledata</th>
       <th>tabledata</th>
       <th>tabledata</th>
+      <th>acrticles</th>
     </tr>
   </thead>
   <tbody>
@@ -19,5 +21,10 @@
        <td><%= i %></td>
       <% end %>
     </tr>
+    <% Article.column_names.each do |col_name| %>
+      <tr>
+       <td><%= col_name %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
