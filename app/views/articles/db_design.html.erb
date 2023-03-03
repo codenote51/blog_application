@@ -1,0 +1,14 @@
+<table>
+  <thead>
+    <tr>
+      <th>acrticles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% Article.column_names.each do |col_name| %>
+      <tr>
+       <td><%= col_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
