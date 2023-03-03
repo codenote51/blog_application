@@ -83,17 +83,17 @@ Rails.application.configure do
   # require "syslog/logger"
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new "app-name")
 
-host = 'example.com' #replace with your own url
-config.action_mailer.default_url_options = { host: host }
+#host = 'example.com' #replace with your own url
+#config.action_mailer.default_url_options = { host: host }
 
 # SMTP settings for gmail
-config.action_mailer.smtp_settings = {
-  :address              => "nancy9ku@gmail.com",
-  :port                 => 587,
-  :user_name            => nancy
-  :authentication       => "plain",
-  :enable_starttls_auto => true
-}
+#config.action_mailer.smtp_settings = {
+  #:address              => "nancy9ku@gmail.com",
+  #:port                 => 587,
+  #:user_name            => nancy
+  #:authentication       => "plain",
+  #:enable_starttls_auto => true
+#}
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
@@ -105,7 +105,7 @@ config.action_mailer.smtp_settings = {
   config.active_record.dump_schema_after_migration = false
 
 
-  config.action_mailer.delivery_method = :smtp
-  host = 'example.com' #replace with your own url
-  config.action_mailer.default_url_options = { host: host }
+ # config.action_mailer.delivery_method = :smtp
+  #host = 'example.com' #replace with your own url
+  #config.action_mailer.default_url_options = { host: host }
 end
