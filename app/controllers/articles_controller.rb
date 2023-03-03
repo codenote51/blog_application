@@ -38,8 +38,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
-
-    redirect_to root_path, status: :see_other
+    redirect_to root_path, :show, status: :see_other
   end
 
   def tables
@@ -48,6 +47,9 @@ class ArticlesController < ApplicationController
 
   def tables2
     @n = params[:n].to_i
+  end
+
+  def db_design
   end
 
   private
