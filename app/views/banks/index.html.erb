@@ -10,7 +10,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @banks.each do |bank| %>
+    <% @banks.all.each do |bank| %>
       <tr>
         <td><%= link_to bank.name, bank %></td>
         <td><%= link_to bank.lastname, bank %></td>
