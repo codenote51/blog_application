@@ -7,15 +7,8 @@
   <li>
     <%= link_to "Edit", edit_order_path(@order) %>
   </li> 
-
-  <li>
-    <%= link_to "Destroy", order_path(@order), data: 
-      {
-        turbo_method: :delete,
-        turbo_confirm: "Are you sure?"
-      } 
-    %>   
-  </li>
 </ol>
+
+ <%= button_to "Destroy this order", @order, method: :delete %>
 
 
