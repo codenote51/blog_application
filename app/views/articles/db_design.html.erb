@@ -17,3 +17,46 @@
     <% end %>
   </tbody>
 </table>
+<br>
+<br>
+<table>
+  <thead>
+    <tr>
+      <th colspan=2>Banks</th>
+    </tr>
+    <tr>
+      <th>Column name</th>
+      <th>Data-type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% Bank.column_names.each do |col_name| %>
+      <tr>
+        <td><%= col_name %></td>
+        <td><%= Bank.columns_hash[col_name].type %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<br>
+<table>
+  <thead>
+    <tr>
+      <th colspan="2">Orders</th>
+    </tr>
+    <tr>
+      <th>Column_name</th>
+      <th>Data-type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% Order.column_names.each do |col_name| %>
+       <tr>
+         <td><%= col_name %></td>
+         <td><%= Order.columns_hash[col_name].type %></td>
+       </tr>
+    <% end %>
+  </tbody>
+  </thead>
+</table>
