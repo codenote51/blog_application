@@ -33,12 +33,13 @@ class OrdersController < ApplicationController
       render :edit, status: :unprocessable_entity
     end
   end 
-
   def destroy
     @order = Order.find(params[:id])
     @order.destroy
-    redirect_to root_path, status: :see_other
-  end 
+    respond_to do |format|
+      format.html { redirect_to orders_url, notice: "Bank was successfully destroyed." }
+    end
+  end
 
   def tests
   end
