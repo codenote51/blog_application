@@ -6,7 +6,7 @@ class CreateBanks < ActiveRecord::Migration[7.0]
       t.string  :email
       t.string  :city
       t.string  :pin, limit: 8
-      t.integer :age, 
+      t.integer :age 
 
       t.timestamps
     end
