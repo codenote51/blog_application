@@ -26,10 +26,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_02_132924) do
     t.string "email"
     t.string "city"
     t.string "pin", limit: 8
+    t.integer "age"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "age"
-    t.integer "#<ActiveRecord::ConnectionAdapters::SQLite3::TableDefinition:0x000055604c220bf8>"
   end
 
   create_table "comments", force: :cascade do |t|

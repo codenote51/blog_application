@@ -52,6 +52,8 @@ class ArticlesController < ApplicationController
   def db_design
   end
 
+  def home
+  end
   private
   def article_params
     params.require(:article).permit(:title, :body)

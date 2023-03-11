@@ -9,10 +9,11 @@
     <%= javascript_include_tag "main" %>
   </head>
   <body>
-    <h1 class="bank">Banks</h1>
+    <%= render partial: 'layouts/heading' %>
     <%= yield %>
     <%= image_tag('rails.png', class: 'rails-pages') %><br>
     <%= link_to "w3school",  'https://www.w3schools.com/' %><br><br>
     <%= image_tag "diploma.jpg", {height: 100}  %><br>
+    <%= image_tag "images_1.jpg", {height: 100}  %><br>
   </body>
 </html>
