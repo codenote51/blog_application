@@ -36,3 +36,35 @@ body{
   background-color: orange;
   text-align: center;
 }
+
+.text-right{
+  float: right;
+}
+
+.home-icon{
+  height: 30px;
+}
+
+.bank-icon{
+  height: 30px;
+}
+
+.order-icon{
+  height: 30px;
+}
+
+.container{
+  background-color: blue;
+  float: right;
+  font-style: italic;
+  font-size: 12px;
+  margin: auto;
+}
+
+li {
+  background-color: red;
+  list-style-type: none;
+}
+
+
+
