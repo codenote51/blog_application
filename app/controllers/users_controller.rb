@@ -8,22 +8,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.new(params.require(:user).permit(:name, :email, :password, :password_confirmation))
     if @user.save
-      flash[:info] = "Please check your email to activate your account."
-      #redirect_to root_url
-      redirect_to 'user_url'
+      redirect_to @user
     else
-      redirect_to '/signup'
+      render :new
     end
   end
 
   def countries
     @countries = Country.pluck(:name, :id)
   end 
-
-  private
-  def user_params
-    params.require(:user).permit(:name, :email, :password, :country)
-  end
 end
