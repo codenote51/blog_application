@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "/db_design", to: "articles#db_design"
   get "/tables2-n-upto-m", to: "articles#tables2" 
   get "/signup", to: "users#new", as: "signup"
+  get "/show/:id", to: "users#show", as: "show"
   post "/users", to: "users#create", as: "users"
   get "/login", to: "sessions#new", as: "login"
   post "/create", to: "sessions#create", as: "create"
