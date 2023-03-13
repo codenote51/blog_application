@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   belongs_to :country
-  #before_save { self.email = email.downcase }
+  before_save { self.email = email.downcase }
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true, length: { in: 6..10 }
