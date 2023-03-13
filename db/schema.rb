@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_02_132924) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_13_061741) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.string "status", limit: 15
@@ -41,6 +41,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_02_132924) do
     t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
+  create_table "countries", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "countrys", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "employees", force: :cascade do |t|
     t.string "name"
     t.string "lastname"
@@ -57,6 +69,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_02_132924) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "country_id"
+    t.index ["country_id"], name: "index_users_on_country_id"
   end
 
   add_foreign_key "comments", "articles"
