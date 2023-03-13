@@ -6,11 +6,11 @@ Rails.application.routes.draw do
   get "/tables-for-n-upto-m/:n/:m", to: "articles#tables"
   get "/db_design", to: "articles#db_design"
   get "/tables2-n-upto-m", to: "articles#tables2" 
-  get "/signup" => "users#new"
-  post "/users" => "users#create"
+  get "/signup", to: "users#new", as: "signup"
+  post "/users", to: "users#create", as: "users"
   get "/login", to: "sessions#new", as: "login"
-  post "/create"   => "sessions#create"
-  delete "/logout"  => "sessions#destroy"
+  post "/create", to: "sessions#create", as: "create"
+  delete "/logout", to: "sessions#destroy", as: "logout"
  
   root "articles#index"
   resources :articles do
