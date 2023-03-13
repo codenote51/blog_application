@@ -1,0 +1,35 @@
+<%= form_for :user, model: @users do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %><br>
+    <% @user.errors.full_messages_for(:name).each do |message| %>
+      <div>
+        <%= message %>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :email %><br>
+    <%= form.text_field :email %><br>
+    <% @user.errors.full_messages_for(:email).each do |message| %>
+      <div>
+        <%= message %>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :password %><br>
+    <%= form.password_field :password %><br>
+  </div>
+
+  <div>
+    <%= form.label :country %><br>
+    <%= form.select :country_id, Country.all.map {|c| [c.name, c.id] }, {prompt:"Choose Country"} %>
+  </div>
+
+  <div>
+    <%= form.submit 'Sign Up', class: 'btn' %>
+  </div>
+<% end %>
