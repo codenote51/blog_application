@@ -73,3 +73,5 @@ group :test do
 end
 
 gem 'zip-zip'
+
+gem 'bcrypt', '~> 3.1', '>= 3.1.12'
