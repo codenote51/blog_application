@@ -2,20 +2,20 @@
 <header>
   <div class="container">
     <nav>
-      <ul>
-        <li>
+      <ul class="nav_ul">
+        <li class="nav_li">
           <%= link_to root_path, class: '' do %>
             <% image_tag('rails.png', class: 'home-icon', title: 'Go To Home Page') %>
           <% end %>
         </li>
 
-        <li>
+        <li class="nav_li">
           <%= link_to banks_path do %>
             <%= image_tag('bank.jpeg', class: 'bank-icon', title: 'Go to Bank Page') %>
           <% end %>
         </li>
 
-        <li>
+        <li class="nav_li">
           <%= link_to orders_path do %>
             <%= image_tag('order.jpeg', class: 'order-icon', title: 'Go to Order Page') %>
           <% end %>
