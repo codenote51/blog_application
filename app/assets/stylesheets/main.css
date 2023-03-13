@@ -27,11 +27,6 @@ ol{
 .rails-pages{
   height: 200px;
 }
-
-body{
-  background-color: pink;
-}
-
 .bank{
   background-color: orange;
   text-align: center;
@@ -54,17 +49,43 @@ body{
 }
 
 .container{
-  background-color: blue;
   float: right;
   font-style: italic;
   font-size: 12px;
   margin: auto;
 }
-
-li {
-  background-color: red;
-  list-style-type: none;
+.nav_ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
+.nav_li {
+  list-style-type: none;
+  padding: 14px 16px;
+  display: inline;
+}
 
+.nav_li:hover{
+  background: blue;
+}
 
+header{
+  height: 50px;
+}
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.divclass{
+  text-align: center;
+  font-size: 30px;
+}
+
+.btn {
+  width: 20%;
+  height: 35px;
+}
