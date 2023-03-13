@@ -8,15 +8,21 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params.require(:user).permit(:name, :email, :password, :password_confirmation))
-    if @user.save
-      redirect_to @user
+    @user = User.new(user_params)
+    if @user.save 
+      flash.now[:now] = "Successfully create User, please login..."
     else
-      render :new
+      flash.now[:now] = @user.errors.full_messages.join(', ')
     end
+    redirect_to root_url
   end
 
   def countries
     @countries = Country.pluck(:name, :id)
   end 
+
+  private
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :country)
+  end
 end
